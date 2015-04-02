@@ -1,0 +1,20 @@
+	.ui-icon-listdate {
+	background-image: url("../css/icons/date2.png") !important;
+}
+
+#icon-date {
+	background-image: url("../css/icons/date2.png") no-repeat;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+}
+
+.ui-li-thumb, .ui-li-icon {
+    left: 1px;
+    max-height: 40px;
+    max-width: 40px;
+    position: absolute;
+    top: 0;
+}

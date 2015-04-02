@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<!--<link rel="stylesheet" href="jquery/jquery.mobile.icons.min.css" />-->
+	<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="jquery/jquery-1.11.1.min.js"></script>
+	<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/sha3.js"></script>
+	<script src="js/aes.js"></script>
+	<script src="js/passme.js"></script>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+	
+	<div data-role="page" id="page-login" >
+		
+		<div data-role="header" data-position="fixed" data-id="persistent"> 
+			<h1>Login</h1>
+		</div>
+		<p>Login</p>
+		<div data-role="footer" data-position="fixed" data-id="persistent">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#page-mainview" data-transition="slidedown">mainview</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+<!-- MAINVIEW -->
+
+	<div data-role="page" id="page-mainview" data-position="fixed" data-id="persistent">
+		<div data-role="header">
+			<h1>Mainview</h1>
+		</div>
+
+		<form class="ui-filterable">
+				<input id="autocomplete-input" data-type="search" placeholder="Search (within) posts...">
+			</form>
+		<div id="posts" data-role="collapsibleset" data-inset="true"></div>
+
+		<div data-role="footer" data-position="fixed" data-id="persistent" data-inset="true">
+			
+			<button id="btn-undo-delete">Wait I didn't want to delete that!</button>
+			
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#page-login" data-transition="slide">login</a></li>
+					<li id="btn-add"><a href="#page-add" data-transition="slide">add</a></li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div data-role="popup" id="popupMenu" data-transition="pop">
+			<ul data-role="listview" data-inset="true" style="min-width:210px;">
+				<li id="popupMenu-heading" data-role="list-divider"></li>
+				<li data-role="list-divider"></li>
+				<li id="btn-edit" data-icon="edit"><a href="#page-add">Edit</a></li>
+				<li data-role="list-divider"></li>
+				<li id="btn-delete" data-icon="delete"><a href="#page-mainview" >Delete</a></li>
+				<li data-role="list-divider"></li>
+			</ul>
+		</div>
+
+	</div>
+
+<!-- ADD-POST -->
+
+	<div data-role="page" id="page-add" data-position="fixed" data-id="persistent">
+		<div data-role="header">
+			<h1>Add Post</h1>
+		</div>
+
+		<button id="btn-add-message" data-icon="info">Tip!</button>
+
+		<div data-role="content" id="npost-form">
+			<p id="npost-message"></p>
+			<form>
+				
+				<input id="npost-account" 	type="text" data-clear-btn="true" placeholder="Headline/Account" 	value="" maxlength="20" >
+				<input id="npost-email" 	type="text" data-clear-btn="true" placeholder="Email" 				value="" maxlength="254">
+				<input id="npost-username" 	type="text" data-clear-btn="true" placeholder="Username" 			value="" maxlength="25">
+				<input id="npost-password" 	type="text" data-clear-btn="true" placeholder="Password" 			value="" maxlength="25">
+				<input id="npost-comment" 	type="text" data-clear-btn="true" placeholder="Comment" 			value="" maxlength="50">
+			</form>
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-id="persistent">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#page-mainview" data-transition="slide" data-direction="reverse">back</a></li>
+					<li><a id="btn-save" href="#page-mainview" data-transition="flip">save</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div data-role="popup" id="popup-tip" data-transition="pop">
+			<h3>Tip</h3>
+			<p id="popup-tip-message">My posting sense is tingeling, try and avoid saving too much information</p>
+			<input type="checkbox" name="checkbox-0" id="checkbox-mini-0" class="custom" data-mini="true" />
+			<label for="checkbox-mini-0">I don't want to see this again</label>
+			<button id="btn-popup-tip-ok">Alright, got it!</button>
+		</div>
+	</div>
+</body>
+</html>
